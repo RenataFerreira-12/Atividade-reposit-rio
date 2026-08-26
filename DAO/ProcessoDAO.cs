@@ -17,10 +17,9 @@ namespace AppWebExemplo.DAO
         {
             try
             {
-                var lista = new List<Processo>(0);
+                var lista = new List<Processo>();
                 //Buscando e abrindo a Conexão com o banco de dados
                 using var con = _conexao.GetConnection();
-                con.Open();
 
                 string sql = "SELECT * FROM processos";
                 using var comando = con.CreateCommand();
@@ -38,13 +37,10 @@ namespace AppWebExemplo.DAO
                     processo.Descricao = leitor.GetString("descricao_pro");
                     processo.Situacao= leitor.GetString("situacao_pro");
 
-
-
                     lista.Add(processo);
                 }
 
-
-                return Listar();
+                return lista;
             }
             catch
             {
