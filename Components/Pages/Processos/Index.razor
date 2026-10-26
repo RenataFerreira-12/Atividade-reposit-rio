@@ -62,15 +62,13 @@
 
                                 @p.Situacao
                             </td>
-                            <td class="text-truncate">@p.Descricao</td>
                             <td class="text-end">
                                 <div class="btn-group btn-group-sm">
-                                    <a href="#"
-                                           class="btn btn-light border text-primary"
-                                           title="Editar">
+                                    <a href="@($"/processos/editar/{p.Id}")" class="btn btn-light
+                                        border text-primary" title="Editar">
                                         <i class="bi bi-pencil"></i>
                                     </a>
-                                    <a href="#"
+                                    <a href="@($"/processos/excluir/{p.Id}")"
                                            class="btn btn-light border text-danger"
                                            title="Excluir">
                                         <i class="bi bi-trash"></i>
